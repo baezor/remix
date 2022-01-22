@@ -1,23 +1,16 @@
-export default function Index() {
+import React from "react";
+import Sidebar from "../components/header/Sidebar";
+import Hero from "../components/slider/Hero";
+
+const Home = () => {
   return (
-    <div
-      className={`py-12 px-2 text-center flex align-center min-h-screen items-center w-full bg-gray-100 justify-center`}
-    >
-      <div>
-        <h1 className="text-3xl font-extrabold pb-6">Angel Romero Baez</h1>
-        <p className="text-xl">
-          Hey, It's me! This site is still under construction. 🚧
-        </p>
-        <p className="text-xl">
-          Reach me out at{" "}
-          <a
-            className="text-xl underline text-rose-500"
-            href="mailto:angel@romerobaez.com"
-          >
-            angel@romerobaez.com
-          </a>
-        </p>
-      </div>
+    <div className="home-light edina_tm_mainpart">
+      <Sidebar />
+      {/* End Header */}
+      <Hero />
+      {/* End Hero */}
     </div>
   );
-}
+};
+
+export default Home;

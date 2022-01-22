@@ -8,24 +8,41 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-import styles from "./tailwind.css";
 import * as gtag from "~/utils/gtags";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "remix";
+
+import styles from "./styles/style.css";
+
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    {
+      rel: "preload",
+      as: "font",
+      href: "/fonts/Matter-Medium.woff2",
+      type: "font/woff2",
+      crossOrigin: "anonymous",
+    },
+    {
+      rel: "preload",
+      as: "font",
+      href: "/fonts/Matter-Regular.woff2",
+      type: "font/woff2",
+      crossOrigin: "anonymous",
+    },
+    { rel: "stylesheet", href: styles },
+  ];
 }
 export const meta: MetaFunction = () => {
   return { title: "Angel Romero Baez" };
 };
 
 export default function App() {
-  
   const location = useLocation();
 
   useEffect(() => {
     gtag.pageview(location.pathname);
   }, [location]);
-  
+
   return (
     <html lang="en">
       <head>
@@ -52,7 +69,7 @@ export default function App() {
           }}
         />
       </head>
-      <body>
+      <body className="dark">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
