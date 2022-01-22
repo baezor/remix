@@ -1,23 +1,21 @@
 import React from "react";
 import {
-  FiFacebook,
+  FiGithub,
   FiTwitter,
   FiInstagram,
-  FiDribbble,
   FiLinkedin,
 } from "react-icons/fi";
 
 const SocialShare = [
   {
-    iconName: <FiFacebook />,
-    link: "https://www.facebook.com/",
+    iconName: <FiGithub />,
+    link: "https://github.com/baezor",
   },
   { iconName: <FiTwitter />, link: "https://twitter.com/" },
   {
     iconName: <FiInstagram />,
     link: "https://www.instagram.com/",
   },
-  { iconName: <FiDribbble />, link: "https://dribbble.com/" },
   {
     iconName: <FiLinkedin />,
     link: "https://www.linkedin.com/feed/",
@@ -28,7 +26,7 @@ const Social = () => {
     <ul>
       {SocialShare.map((val, i) => (
         <li key={i}>
-          <a href={val.link} target="_blank" rel="noreferrer">
+          <a href={val.link} target="_blank" rel="noopener">
             {val.iconName}
           </a>
         </li>
