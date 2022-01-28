@@ -69,7 +69,7 @@ export default function App() {
           }}
         />
       </head>
-      <body className="dark">
+      <body className="light">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

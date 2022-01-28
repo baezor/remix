@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FiGithub,
   FiTwitter,
@@ -11,14 +10,10 @@ const SocialShare = [
     iconName: <FiGithub />,
     link: "https://github.com/baezor",
   },
-  { iconName: <FiTwitter />, link: "https://twitter.com/" },
-  {
-    iconName: <FiInstagram />,
-    link: "https://www.instagram.com/",
-  },
+  { iconName: <FiTwitter />, link: "https://twitter.com/baezor" },
   {
     iconName: <FiLinkedin />,
-    link: "https://www.linkedin.com/feed/",
+    link: "https://www.linkedin.com/in/angelromerobaez/",
   },
 ];
 const Social = () => {

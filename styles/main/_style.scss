@@ -427,11 +427,15 @@ body.dark .loader_line:after {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 99;
   transition: all 0.5s ease;
+
+  // Temporal hide sidebar until we have pages.
+  transform: translateX(-100%);
+
   @media screen and (min-width: 1200px) and (max-width: 1500px) {
     width: 288px;
   }
   @media screen and (max-width: 1199px) {
-    transform: translateX(-100%);
+ 
     &.menu-open {
       transform: translateX(0);
     }
@@ -594,10 +598,10 @@ body.dark .loader_line:after {
   height: auto;
   clear: both;
   float: left;
-  padding-left: 320px;
+  //padding-left: 320px;
   transition: all 0.5s ease;
   @media screen and (min-width: 1200px) and (max-width: 1500px) {
-    padding-left: 288px;
+    //padding-left: 288px;
   }
 }
 
@@ -675,7 +679,7 @@ body.dark .loader_line:after {
 }
 
 .edina_tm_hero .text {
-  max-width: 500px;
+  max-width: 620px;
   margin: 0px auto 32px auto;
   @media screen and (max-width: 575px) {
     font-size: 15px;
@@ -2631,7 +2635,7 @@ a {
     font-size: 13px;
   }
   .edina_tm_hero .name {
-    font-size: 36px;
+    font-size: 28px;
   }
   .edina_tm_hero .image {
     width: 200px;
@@ -2753,7 +2757,7 @@ a {
     margin-bottom: 25px;
   }
   .edina_tm_hero .name {
-    font-size: 35px;
+    font-size: 28px;
   }
 }
 
