@@ -1,7 +1,6 @@
 import {
   FiGithub,
   FiTwitter,
-  FiInstagram,
   FiLinkedin,
 } from "react-icons/fi";
 
