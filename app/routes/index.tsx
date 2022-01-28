@@ -1,23 +1,19 @@
-export default function Index() {
+import Hero from "../components/slider/Hero";
+
+const description = `I help brands, companies, and people to bring to life their ideas. 
+If you're looking for a software developer with an entrepreneurial spirit and life-long learning mindset, you're in the right place. Hi! It is a pleasure to meet you!`;
+
+const Home = () => {
   return (
-    <div
-      className={`py-12 px-2 text-center flex align-center min-h-screen items-center w-full bg-gray-100 justify-center`}
-    >
-      <div>
-        <h1 className="text-3xl font-extrabold pb-6">Angel Romero Baez</h1>
-        <p className="text-xl">
-          Hey, It's me! This site is still under construction. 🚧
-        </p>
-        <p className="text-xl">
-          Reach me out at{" "}
-          <a
-            className="text-xl underline text-rose-500"
-            href="mailto:angel@romerobaez.com"
-          >
-            angel@romerobaez.com
-          </a>
-        </p>
-      </div>
+    <div className="home-light edina_tm_mainpart">
+      <Hero
+        heroImage="angelromerobaez"
+        shapeImage="hero-shape"
+        name="Angel Romero Baez"
+        description={description}
+      />
     </div>
   );
-}
+};
+
+export default Home;
