@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import {
   Links,
   LiveReload,
@@ -8,9 +7,6 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-import * as gtag from "~/utils/gtags";
-import { useLocation } from "remix";
-
 import styles from "./styles/style.css";
 
 export function links() {
@@ -37,12 +33,6 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    gtag.pageview(location.pathname);
-  }, [location]);
-
   return (
     <html lang="en">
       <head>
@@ -50,24 +40,6 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-        />
-        <script
-          async
-          id="gtag-init"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-          }}
-        />
       </head>
       <body className="light">
         <Outlet />
