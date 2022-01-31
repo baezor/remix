@@ -2,26 +2,21 @@ import React, { FunctionComponent } from "react";
 import Social from "../Social";
 
 interface IProps {
-  shapeImage: string;
-  heroImage: string;
   name: string;
   description: string;
 }
 
-const Hero: FunctionComponent<IProps> = ({
-  shapeImage,
-  heroImage,
-  name,
-  description,
-}) => (
+const Hero: FunctionComponent<IProps> = ({ name, description }) => (
   //    HERO
   <div className="edina_tm_hero" id="home">
     <div className="content">
       <div className="img-shape" data-aos="fade-up" data-aos-duration="1200">
         <img
-          src={`img/hero/${shapeImage}.svg`}
-          srcSet={`img/hero/${heroImage}.jpg`}
-          alt="hero image"
+          srcSet={`img/hero/angelromerobaez-400w.jpg 2x`}
+          width="200"
+          height="200"
+          src={`img/hero/angelromerobaez-200w.jpg`}
+          alt="Angel Romero Baez"
         />
       </div>
       <div className="extra">

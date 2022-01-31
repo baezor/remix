@@ -6,12 +6,7 @@ If you're looking for a software developer with an entrepreneurial spirit and li
 const Home = () => {
   return (
     <div className="home-light edina_tm_mainpart">
-      <Hero
-        heroImage="angelromerobaez"
-        shapeImage="hero-shape"
-        name="Angel Romero Baez"
-        description={description}
-      />
+      <Hero name="Angel Romero Baez" description={description} />
     </div>
   );
 };
