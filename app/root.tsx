@@ -8,6 +8,8 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./styles/style.css";
+import { ClientOnly } from "remix-utils";
+import AnimatedCursor from "react-animated-cursor";
 
 export function links() {
   return [
@@ -42,6 +44,16 @@ export default function App() {
         <Links />
       </head>
       <body className="light">
+      <ClientOnly>
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={44}
+          color="52, 73, 94"
+          outerAlpha={0.3}
+          innerScale={0.7}
+          outerScale={1.4}
+        />
+      </ClientOnly>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
