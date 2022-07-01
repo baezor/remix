@@ -4,12 +4,10 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
+  useMatches
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./styles/style.css";
-import { ClientOnly } from "remix-utils";
-import AnimatedCursor from "react-animated-cursor";
 
 export function links() {
   return [
@@ -35,6 +33,10 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
+  const matches = useMatches();
+  const includeScripts = matches.some(
+    (match) => match.handle?.hydrate
+  );
   return (
     <html lang="en">
       <head>
@@ -44,19 +46,9 @@ export default function App() {
         <Links />
       </head>
       <body className="light">
-      <ClientOnly>
-        <AnimatedCursor
-          innerSize={8}
-          outerSize={44}
-          color="52, 73, 94"
-          outerAlpha={0.3}
-          innerScale={0.7}
-          outerScale={1.4}
-        />
-      </ClientOnly>
         <Outlet />
-        <ScrollRestoration />
-        <Scripts />
+        {/* include the scripts, or not! */}
+        {includeScripts ? <Scripts /> : null}
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
